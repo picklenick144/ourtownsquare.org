@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TownSquare — Where neighbors connect</title>
+  <meta name="description" content="TownSquare is a friendly, librarian-guided space for neighbors to ask questions, share tips, and discover local resources." />
+  <meta name="theme-color" content="#E5734F" />
+  <style>
+    :root {
+      --terracotta: #E5734F;
+      --honey-yellow: #F7B84B;
+      --sky-blue: #6BB6E9;
+      --leaf-green: #83C68A;
+      --soft-cream: #FDF8F2;
+      --charcoal: #333333;
+      --radius: 16px;
+      --shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--soft-cream);
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+    em, i, .accent-text {
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    a { color: var(--sky-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo img {
+      height: 42px; width: 42px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    .title { font-weight: 700; font-size: 1.15rem; letter-spacing: 0.2px; }
+    .chip { font-size: 0.8rem; color: var(--charcoal); border: 1px solid rgba(0,0,0,0.1); padding: 6px 10px; border-radius: 999px; }
+
+    .tag { display: inline-flex; align-items: center; gap: 6px; background: var(--leaf-green); color: #fff; padding: 6px 10px; border-radius: 999px; font-size: .85rem; }
+
+    .hero { display: grid; grid-template-columns: 1.1fr; gap: 28px; align-items: center; padding: 60px 0 40px; }
+    @media (min-width: 900px) { .hero { grid-template-columns: 1.1fr 0.9fr; } }
+    .headline { font-size: 2.4rem; line-height: 1.15; margin: 0; color: var(--terracotta); }
+    @media (min-width: 900px) { .headline { font-size: 3rem; } }
+    .sub { color: #555; margin: 12px 0 20px; font-size: 1.1rem; }
+
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: var(--radius); border: none; background: var(--sky-blue); color: white; font-weight: 600; box-shadow: var(--shadow); transition: transform .15s ease; }
+    .btn.primary { background: var(--honey-yellow); color: var(--charcoal); }
+    .btn:hover { transform: translateY(-2px); }
+
+    .card { background: white; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+
+    .illus { position: relative; isolation: isolate; }
+    .bubble {
+      position: absolute; inset: 18% -6% auto auto; width: 260px; rotate: -3deg;
+      background: white; border: 1px solid rgba(0,0,0,0.08);
+      padding: 16px; border-radius: 16px; color: var(--charcoal);
+      box-shadow: var(--shadow);
+    }
+    .bubble strong { color: var(--terracotta); }
+    .screen { aspect-ratio: 16/10; background: linear-gradient(180deg, #fff, var(--soft-cream)); border: 1px solid rgba(0,0,0,0.05); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+    .screen .bar { display: flex; gap: 6px; padding: 10px; background: var(--sky-blue); }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #fff; opacity: 0.7; }
+    .screen .lines { padding: 18px; }
+    .line { height: 12px; margin-bottom: 12px; border-radius: 8px; background: linear-gradient(90deg, var(--leaf-green), var(--honey-yellow)); opacity: 0.6; }
+    .line:nth-child(3n+2) { width: 85%; }
+    .line:nth-child(3n+3) { width: 70%; }
+    .line:nth-child(3n+1) { width: 95%; }
+
+    .features { display: grid; gap: 16px; grid-template-columns: 1fr; margin: 40px 0 10px; }
+    @media (min-width: 900px) { .features { grid-template-columns: repeat(3, 1fr); } }
+    .feature h3 { margin: 0 0 6px; font-size: 1.1rem; color: var(--terracotta); }
+    .feature p { margin: 0; color: var(--charcoal); font-size: 1rem; }
+
+    footer { margin: 32px 0 12px; color: var(--charcoal); font-size: .9rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 16px; }
+    .links { display: flex; gap: 16px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="/mnt/data/2da4433e-3bea-4c12-820e-fd1d8e454aa0.png" alt="TownSquare logo">
+        </div>
+        <div class="title">TownSquare</div>
+        <span class="chip">beta</span>
+      </div>
+      <a class="tag" href="https://meta.townsquare.org" aria-label="Visit the meta hub">Meta hub →</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1 class="headline">Make your library the heart of your community—online and off.</h1>
+        <p class="sub">Ask questions, swap tips, and discover local resources — all in a welcoming space curated by librarians and powered by helpful tools.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://mytown.townsquare.org">Enter your community</a>
+          <a class="btn" href="#learn-more">Learn more</a>
+        </div>
+      </div>
+
+      <div class="illus">
+        <div class="card screen" role="img" aria-label="Preview of the forum interface">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="bubble">“Where can I find a <strong>juggler for my kid’s party</strong>? Any recs?” — <span class="accent-text">Plymouth neighbor</span></div>
+      </div>
+    </section>
+
+    <section id="learn-more" class="features">
+      <div class="feature card">
+        <h3>Friendly by design</h3>
+        <p>Real names optional, real kindness required. Clear guidelines and active moderation keep conversations helpful.</p>
+      </div>
+      <div class="feature card">
+        <h3>Librarian‑guided</h3>
+        <p>Answers are improved with trusted sources — calendars, local databases, and librarian‑curated links.</p>
+      </div>
+      <div class="feature card">
+        <h3>AI‑assisted</h3>
+        <p>Draft replies, surface similar threads, and discover resources faster — with humans always in the loop.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> TownSquare</div>
+      <div class="links">
+        <a href="mailto:hello@townsquare.org">Contact</a>
+        <a href="https://meta.townsquare.org">Meta</a>
+        <a href="https://mytown.townsquare.org">Community</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

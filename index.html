@@ -72,6 +72,25 @@
       padding: 16px; border-radius: 16px; color: var(--charcoal);
       box-shadow: var(--shadow);
     }
+    .bubble:nth-child(3) {
+      inset: 45% -6% auto auto;
+      rotate: 2deg;
+    }
+    @media (max-width: 899px) {
+      .bubble {
+        width: 180px;
+        padding: 12px;
+        font-size: 0.85rem;
+      }
+      .bubble:nth-child(2) {
+        inset: 10% auto auto -4%;
+        rotate: -3deg;
+      }
+      .bubble:nth-child(3) {
+        inset: 55% -4% auto auto;
+        rotate: 3deg;
+      }
+    }
     .bubble strong { color: var(--terracotta); }
     .screen { aspect-ratio: 16/10; background: linear-gradient(180deg, #fff, var(--soft-cream)); border: 1px solid rgba(0,0,0,0.05); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
     .screen .bar { display: flex; gap: 6px; padding: 10px; background: var(--sky-blue); }
@@ -127,7 +146,7 @@
           </div>
         </div>
         <div class="bubble">"Where can I get my passport renewed?" — <span class="accent-text">Tina Traveler</span></div>
-        <div class="bubble" style="inset: 45% -6% auto auto; rotate: 2deg;">"The main branch, you can schedule an appointment from 10am to 4pm Monday through Friday" — <span class="accent-text">Lily Librarian</span></div>
+        <div class="bubble">"The main branch, you can schedule an appointment from 10am to 4pm Monday through Friday" — <span class="accent-text">Lily Librarian</span></div>
         
       </div>
     </section>
